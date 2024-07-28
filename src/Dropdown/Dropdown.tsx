@@ -6,11 +6,11 @@ import { CloseIcon, SearchIcon } from '../icons';
 import PortalWrapper from '../PortalWrapper';
 
 const Dropdown: React.FC<DropdownProps> = ({
-  options,
+  options = [],
   multiple = false,
   withSearch = true,
   portal = false,
-  outlined = false,
+  outlined = true,
   customRenderOption,
   zIndex = 1000,
   label = 'Label',
@@ -62,7 +62,7 @@ const Dropdown: React.FC<DropdownProps> = ({
     const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
     return parts.map((part, i) =>
       part.toLowerCase() === highlight.toLowerCase() ? (
-        <span key={i} className="bg-[#61c9c7]">
+        <span key={i} className="rdt-bg-[#61c9c7]">
           {part}
         </span>
       ) : (
@@ -89,42 +89,44 @@ const Dropdown: React.FC<DropdownProps> = ({
   const dropdownMenu = (
     <div
       data-testid="dropdown-menu"
-      className={cn('absolute mt-2 left-0 w-full bg-white border border-[#e4e6e6] shadow max-h-64 overflow-y-auto')}
-      style={{ zIndex }}>
+      className="rdt-absolute rdt-mt-2 rdt-left-0 rdt-w-full rdt-bg-white rdt-border rdt-border-[#e4e6e6] rdt-text-[#3e4242] rdt-text-base rdt-shadow rdt-max-h-64 rdt-overflow-y-auto"
+      style={{ zIndex }}
+    >
       {withSearch && (
-        <div className="relative">
+        <div className="rdt-relative">
           <input
             type="text"
-            className="w-full pl-10 pr-2 py-2 border-b border-[#e4e6e6] focus-visible:outline-none"
+            className="rdt-w-full rdt-pl-10 rdt-pr-2 rdt-py-2 rdt-border-b rdt-border-[#e4e6e6] focus-visible:rdt-outline-none"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             ref={inputSearchRef}
           />
-          <SearchIcon className="absolute top-1/2 left-3 transform -translate-y-1/2 w-4 h-4" />
+          <SearchIcon className="rdt-absolute rdt-top-1/2 rdt-left-3 rdt-transform -rdt-translate-y-1/2 rdt-w-4 rdt-h-4" />
           {searchTerm && (
             <CloseIcon
               data-testid="clear-search"
-              className="absolute top-1/2 right-3 transform -translate-y-1/2 w-4 h-4 cursor-pointer"
+              className="rdt-absolute rdt-top-1/2 rdt-right-3 rdt-transform -rdt-translate-y-1/2 rdt-w-4 rdt-h-4 rdt-cursor-pointer"
               onClick={() => setSearchTerm('')}
             />
           )}
         </div>
       )}
-      <div className="max-h-60 overflow-y-auto">
+      <div className="rdt-max-h-60 rdt-overflow-y-auto">
         {filteredOptions?.length > 0 ? (
           filteredOptions.map((option) => (
             <div
               key={option.value}
               className={cn(
-                'px-4 py-3 cursor-pointer hover:bg-[#f1fbf8]',
-                multiple && selectedOptions.includes(option.value) && 'bg-[#f1fbf8]'
+                'rdt-px-4 rdt-py-3 rdt-cursor-pointer hover:rdt-bg-[#f1fbf8] rdt-text-base',
+                multiple && selectedOptions.includes(option.value) && 'rdt-bg-[#f1fbf8]'
               )}
-              onClick={() => handleOptionClick(option.value)}>
+              onClick={() => handleOptionClick(option.value)}
+            >
               {renderOption(option)}
             </div>
           ))
         ) : (
-          <p className="px-4 py-3 text-[#7c7e7e]">No options</p>
+          <p className="rdt-px-4 rdt-py-3 rdt-text-[#7c7e7e]">No options</p>
         )}
       </div>
     </div>
@@ -134,43 +136,50 @@ const Dropdown: React.FC<DropdownProps> = ({
     <PortalWrapper portal={portal}>
       <div
         className={cn(
-          'relative flex items-center gap-4 w-full',
-          labelPosition === 'top' ? 'flex-col items-start gap-1' : 'flex-row'
+          'rdt-relative rdt-flex rdt-w-full',
+          labelPosition === 'top' ? 'rdt-flex-col rdt-items-start rdt-gap-2' : 'rdt-flex-row rdt-items-center rdt-gap-4'
         )}
         style={{ zIndex }}
-        ref={dropdownRef}>
+        ref={dropdownRef}
+      >
         {!noLabel && (
           <label
-            style={{ width: labelWidth ? labelWidth : '250px' }}
-            className={cn('text-sm text-gray-600 font-medium')}>
+            style={{ width: noLabel ? '100%' : labelWidth ? labelWidth : '250px' }}
+            className="rdt-text-base rdt-text-gray-600 rdt-font-medium"
+          >
             {label}
           </label>
         )}
-        <div className="relative w-full">
+        <div className="rdt-relative rdt-w-full">
           <div
             data-testid="dropdown"
             className={cn(
-              'p-2 min-h-12 flex items-center cursor-pointer rounded w-full relative',
-              outlined ? 'border border-[#d9d9d9] bg-white' : 'bg-[#d7d9da]'
+              'rdt-p-2 rdt-min-h-[50px] rdt-flex rdt-items-center rdt-cursor-pointer rdt-rounded rdt-w-full rdt-relative',
+              outlined ? 'rdt-border rdt-border-[#d9d9d9] rdt-bg-white' : 'rdt-bg-[#d7d9da]'
             )}
-            onClick={toggleDropdown}>
+            onClick={toggleDropdown}
+          >
             {multiple ? (
-              <div className="flex flex-wrap gap-1">
+              <div className="rdt-flex rdt-flex-wrap rdt-gap-1">
                 {selectedOptions.map((value) => (
-                  <div
+                  <p
                     key={value}
-                    className={'flex items-center gap-2 bg-[#f4f5f5] text-[#656767] pl-3 pr-4 py-1 rounded-full'}>
+                    className={
+                      'rdt-flex rdt-items-center rdt-gap-2 rdt-bg-[#f4f5f5] rdt-text-base rdt-text-[#656767] rdt-pl-3 rdt-pr-4 rdt-py-1 rdt-rounded-full'
+                    }
+                  >
                     {options.find((option) => option.value === value)?.label}
                     <button
                       data-testid="remove-option"
-                      className="ml-1 text-[#656767]"
+                      className="rdt-ml-1 rdt-text-[#656767]"
                       onClick={(e) => {
                         e.stopPropagation();
                         handleRemoveOption(value);
-                      }}>
-                      <CloseIcon className="w-4 h-4 text-gray-600" />
+                      }}
+                    >
+                      <CloseIcon className="rdt-w-4 rdt-h-4 rdt-text-gray-600" />
                     </button>
-                  </div>
+                  </p>
                 ))}
               </div>
             ) : (

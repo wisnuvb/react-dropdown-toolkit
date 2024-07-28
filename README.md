@@ -28,7 +28,9 @@ Here's a basic example of how to use the Dropdown component:
 
 ```js
 import React from 'react';
+
 import Dropdown from 'react-dropdown-toolkit';
+import 'react-dropdown-toolkit/dist/index.css';
 
 const options = [
   { label: 'Option 1', value: 'option1' },
@@ -52,17 +54,20 @@ export default App;
 
 ### Dropdown
 
-| Prop               | Type                                                          | Default   | Description                             |
-| ------------------ | ------------------------------------------------------------- | --------- | --------------------------------------- |
-| options            | { label: string, value: string }[]                            | []        | The options to display in the dropdown  |
-| multiple           | boolean                                                       | false     | Allows multiple selection               |
-| withSearch         | boolean                                                       | true      | Enables search functionality            |
-| onSelectedChange   | ((selected: string[]) => void                                 | undefined | Capture selected values in array format |
-| portal             | boolean                                                       | false     | Renders dropdown in a portal            |
-| outlined           | boolean                                                       | false     | Adds an outline to the dropdown         |
-| customRenderOption | (option: { label: string, value: string }) => React.ReactNode | null      | Custom function to render an option     |
-| zIndex             | number                                                        | 1000      | The z-index of the dropdown menu        |
-| label              | string                                                        | "Label"   | The label for the dropdown              |
+| Prop               | Type                                                          | Default   | Description                                    |
+| ------------------ | ------------------------------------------------------------- | --------- | ---------------------------------------------- |
+| options            | { label: string, value: string }[]                            | []        | The options to display in the dropdown         |
+| multiple           | boolean                                                       | false     | Allows multiple selection                      |
+| withSearch         | boolean                                                       | true      | Enables search functionality                   |
+| onSelectedChange   | ((selected: string[]) => void                                 | undefined | Capture selected values in array format        |
+| portal             | boolean                                                       | false     | Renders dropdown in a portal                   |
+| outlined           | boolean                                                       | true      | Adds an outline to the dropdown                |
+| customRenderOption | (option: { label: string, value: string }) => React.ReactNode | null      | Custom function to render an option            |
+| zIndex             | number                                                        | 1000      | The z-index of the dropdown menu               |
+| label              | string                                                        | "Label"   | The label for the dropdown                     |
+| noLabel            | boolean                                                       | false     | To hide labels                                 |
+| labelWidth         | string                                                        | "250px"   | Set the label width and adjust it to your form |
+| labelPosition      | string                                                        | "left"    | Displays label position                        |
 
 ## Development
 
