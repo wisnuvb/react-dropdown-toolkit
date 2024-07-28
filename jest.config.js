@@ -1,4 +1,8 @@
 module.exports = {
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.jsx?$': 'babel-jest',
+  },
   testEnvironment: 'jsdom',
   collectCoverage: true,
   coverageDirectory: 'coverage',
@@ -10,7 +14,10 @@ module.exports = {
     'src/PortalWrapper\\.tsx$',
     'src/.*\\.stories\\.tsx$',
   ],
-  transformIgnorePatterns: ['<rootDir>/node_modules/'],
+  moduleNameMapper: {
+    '\\.css$': 'identity-obj-proxy',
+  },
+  transformIgnorePatterns: ['/node_modules/(?!your-library-to-transform).+\\.js$'],
   collectCoverage: true,
   coverageDirectory: '<rootDir>/coverage',
   coverageReporters: ['text', 'lcov'],
