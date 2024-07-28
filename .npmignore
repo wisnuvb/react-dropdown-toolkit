@@ -28,6 +28,3 @@ dist/
 
 # Ignore test coverage
 coverage/
-
-# Ignore rollup cache
-.rollup.cache/
