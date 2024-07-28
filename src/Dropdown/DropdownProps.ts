@@ -1,4 +1,3 @@
-// src/components/Dropdown/DropdownProps.ts
 export interface DropdownProps {
   id?: string;
   options: Array<{ label: string; value: string }>;
