@@ -1,0 +1,71 @@
+{
+  "name": "react-dropdown-toolkit",
+  "version": "0.0.4",
+  "description": "A searchable dropdown component for React with multiple selection and customizable styles.",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "jest --coverage",
+    "lint": "prettier --check .",
+    "build": "tsup src/index.ts",
+    "prepublishOnly": "npm run build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+"
+  },
+  "keywords": [
+    "react",
+    "dropdown",
+    "component",
+    "searchable",
+    "multiple-selection",
+    "customizable"
+  ],
+  "author": {
+    "name": "Wisnu Saputro",
+    "email": "wisnuvb@gmail.com"
+  },
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^17.x || ^18.x",
+    "react-dom": "^17.x || ^18.x"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.17",
+    "@storybook/addon-interactions": "^7.6.17",
+    "@storybook/addon-links": "^7.6.17",
+    "@storybook/addon-onboarding": "^1.0.11",
+    "@storybook/blocks": "^7.6.17",
+    "@storybook/react": "^7.6.17",
+    "@storybook/react-vite": "^7.6.17",
+    "@storybook/test": "^7.6.17",
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/react": "^16.0.0",
+    "@types/jest": "^29.5.12",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "clsx": "^2.1.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jsdom": "^24.1.1",
+    "prettier": "^3.2.5",
+    "postcss": "^8.4.40",
+    "storybook": "^7.6.17",
+    "tailwindcss": "^3.4.7",
+    "tailwind-merge": "^2.4.0",
+    "ts-loader": "^9.5.1",
+    "tsup": "^8.0.2",
+    "typescript": "^5.5.4"
+  },
+  "tsup": {
+    "dts": true
+  }
+}

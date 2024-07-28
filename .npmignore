@@ -1,0 +1,33 @@
+# Logs
+logs
+
+#idea files
+.idea
+
+# Ignore node_modules
+node_modules
+
+# Ignore build scripts
+tsconfig.json
+tsconfig.build.json
+jest.config.js
+
+# Ignore test files
+*.test.js
+*.spec.js
+*.test.tsx
+*.stories.tsx
+
+# Ignore any other unwanted files
+*.log
+*.md
+
+# Ignore any other unwanted files
+src/
+dist/
+
+# Ignore test coverage
+coverage/
+
+# Ignore rollup cache
+.rollup.cache/
