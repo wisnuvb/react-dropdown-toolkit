@@ -6,11 +6,11 @@ export interface DropdownProps {
   withSearch?: boolean;
   outlined?: boolean;
   portal?: boolean;
-  customRenderOption?: (option: {
-    label: string;
-    value: string;
-  }) => JSX.Element;
+  customRenderOption?: (option: { label: string; value: string }) => JSX.Element;
   zIndex?: number;
   label?: string;
+  noLabel?: boolean;
+  labelPosition?: 'top' | 'left';
+  labelWidth?: string;
   onSelectedChange?: (selected: string[]) => void;
 }

@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import ReactDOM from "react-dom";
+import React, { useEffect, useRef } from 'react';
+import ReactDOM from 'react-dom';
 
 interface PortalWrapperProps {
   portal: boolean;
@@ -11,7 +11,7 @@ const PortalWrapper: React.FC<PortalWrapperProps> = ({ portal, children }) => {
 
   useEffect(() => {
     if (portal) {
-      el.current = document.createElement("div");
+      el.current = document.createElement('div');
       document.body.appendChild(el.current);
       return () => {
         if (el.current) {
@@ -21,13 +21,7 @@ const PortalWrapper: React.FC<PortalWrapperProps> = ({ portal, children }) => {
     }
   }, [portal]);
 
-  return portal ? (
-    el.current ? (
-      ReactDOM.createPortal(children, el.current)
-    ) : null
-  ) : (
-    <>{children}</>
-  );
+  return portal ? el.current ? ReactDOM.createPortal(children, el.current) : null : <>{children}</>;
 };
 
 export default PortalWrapper;

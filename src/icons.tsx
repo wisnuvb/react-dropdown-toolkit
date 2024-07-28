@@ -1,5 +1,4 @@
-// icons.tsx
-import React from "react";
+import React from 'react';
 
 export const CloseIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg

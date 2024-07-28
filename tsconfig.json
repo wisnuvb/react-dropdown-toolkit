@@ -24,27 +24,3 @@
     "jsx": "react"
   }
 }
-
-// {
-//   "compilerOptions": {
-//     "target": "es5",
-//     "module": "commonjs",
-//     "lib": ["dom", "dom.iterable", "esnext"],
-//     "allowJs": true,
-//     "skipLibCheck": true,
-//     "strict": true,
-//     "forceConsistentCasingInFileNames": true,
-//     "noEmit": false,
-//     "esModuleInterop": true,
-//     "moduleResolution": "node",
-//     "resolveJsonModule": true,
-//     "isolatedModules": true,
-//     "jsx": "react",
-//     "incremental": true,
-//     "declaration": true,
-//     "types": ["@types/mdx-js__react"],
-//     "typeRoots": ["./types", "./node_modules/@types"]
-//   },
-//   "include": ["src"],
-//   "exclude": ["node_modules"]
-// }

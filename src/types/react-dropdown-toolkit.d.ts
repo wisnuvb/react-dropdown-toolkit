@@ -1,5 +1,5 @@
-declare module "react-dropdown-toolkit" {
-  import * as React from "react";
+declare module 'react-dropdown-toolkit' {
+  import * as React from 'react';
 
   export interface DropdownProps {
     options: Array<{ label: string; value: string }>;
@@ -7,10 +7,7 @@ declare module "react-dropdown-toolkit" {
     withSearch?: boolean;
     portal?: boolean;
     outlined?: boolean;
-    customRenderOption?: (option: {
-      label: string;
-      value: string;
-    }) => React.ReactNode;
+    customRenderOption?: (option: { label: string; value: string }) => React.ReactNode;
     zIndex?: number;
     label?: string;
   }
