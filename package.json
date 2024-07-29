@@ -1,6 +1,6 @@
 {
   "name": "react-dropdown-toolkit",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A searchable dropdown component for React with multiple selection and customizable styles.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
