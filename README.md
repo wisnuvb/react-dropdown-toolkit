@@ -2,9 +2,11 @@
 
 [![npm version](https://badge.fury.io/js/react-dropdown-toolkit.svg)](https://badge.fury.io/js/react-dropdown-toolkit)
 [![codecov](https://codecov.io/gh/wisnuvb/react-dropdown-toolkit/graph/badge.svg?token=FHNNKMD3G5)](https://codecov.io/gh/wisnuvb/react-dropdown-toolkit)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](https://opensource.org/license/isc-license-txt)
 
 A customizable and searchable dropdown component for ReactJS.
+
+[See it in action (Demo)](https://react-dropdown-toolkit.vercel.app/)
 
 ## Features
 
@@ -68,6 +70,7 @@ export default App;
 | noLabel            | boolean                                                       | false     | To hide labels                                 |
 | labelWidth         | string                                                        | "250px"   | Set the label width and adjust it to your form |
 | labelPosition      | string                                                        | "left"    | Displays label position                        |
+| labelStyle         | {}                                                            | {}        | Custom label style                             |
 
 ## Development
 
@@ -110,4 +113,4 @@ Contributions are welcome! Please open an issue or submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the ISC License.

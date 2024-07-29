@@ -14,9 +14,11 @@ const Dropdown: React.FC<DropdownProps> = ({
   customRenderOption,
   zIndex = 1000,
   label = 'Label',
+  placeholder,
   noLabel = false,
   labelPosition = 'left',
   labelWidth = '100px',
+  labelStyle,
   onSelectedChange,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -90,14 +92,14 @@ const Dropdown: React.FC<DropdownProps> = ({
     <div
       data-testid="dropdown-menu"
       className="rdt-absolute rdt-mt-2 rdt-left-0 rdt-w-full rdt-bg-white rdt-border rdt-border-[#e4e6e6] rdt-text-[#3e4242] rdt-text-base rdt-shadow rdt-max-h-64 rdt-overflow-y-auto"
-      style={{ zIndex }}
-    >
+      style={{ zIndex }}>
       {withSearch && (
         <div className="rdt-relative">
           <input
             type="text"
             className="rdt-w-full rdt-pl-10 rdt-pr-2 rdt-py-2 rdt-border-b rdt-border-[#e4e6e6] focus-visible:rdt-outline-none"
             value={searchTerm}
+            placeholder={placeholder || 'Search...'}
             onChange={(e) => setSearchTerm(e.target.value)}
             ref={inputSearchRef}
           />
@@ -120,8 +122,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                 'rdt-px-4 rdt-py-3 rdt-cursor-pointer hover:rdt-bg-[#f1fbf8] rdt-text-base',
                 multiple && selectedOptions.includes(option.value) && 'rdt-bg-[#f1fbf8]'
               )}
-              onClick={() => handleOptionClick(option.value)}
-            >
+              onClick={() => handleOptionClick(option.value)}>
               {renderOption(option)}
             </div>
           ))
@@ -140,13 +141,11 @@ const Dropdown: React.FC<DropdownProps> = ({
           labelPosition === 'top' ? 'rdt-flex-col rdt-items-start rdt-gap-2' : 'rdt-flex-row rdt-items-center rdt-gap-4'
         )}
         style={{ zIndex }}
-        ref={dropdownRef}
-      >
+        ref={dropdownRef}>
         {!noLabel && (
           <label
-            style={{ width: noLabel ? '100%' : labelWidth ? labelWidth : '250px' }}
-            className="rdt-text-base rdt-text-gray-600 rdt-font-medium"
-          >
+            style={{ ...labelStyle, width: noLabel ? '100%' : labelWidth ? labelWidth : '250px' }}
+            className="'rdt-text-base rdt-text-gray-600 rdt-font-medium'">
             {label}
           </label>
         )}
@@ -157,8 +156,7 @@ const Dropdown: React.FC<DropdownProps> = ({
               'rdt-p-2 rdt-min-h-[50px] rdt-flex rdt-items-center rdt-cursor-pointer rdt-rounded rdt-w-full rdt-relative',
               outlined ? 'rdt-border rdt-border-[#d9d9d9] rdt-bg-white' : 'rdt-bg-[#d7d9da]'
             )}
-            onClick={toggleDropdown}
-          >
+            onClick={toggleDropdown}>
             {multiple ? (
               <div className="rdt-flex rdt-flex-wrap rdt-gap-1">
                 {selectedOptions.map((value) => (
@@ -166,8 +164,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                     key={value}
                     className={
                       'rdt-flex rdt-items-center rdt-gap-2 rdt-bg-[#f4f5f5] rdt-text-base rdt-text-[#656767] rdt-pl-3 rdt-pr-4 rdt-py-1 rdt-rounded-full'
-                    }
-                  >
+                    }>
                     {options.find((option) => option.value === value)?.label}
                     <button
                       data-testid="remove-option"
@@ -175,8 +172,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                       onClick={(e) => {
                         e.stopPropagation();
                         handleRemoveOption(value);
-                      }}
-                    >
+                      }}>
                       <CloseIcon className="rdt-w-4 rdt-h-4 rdt-text-gray-600" />
                     </button>
                   </p>

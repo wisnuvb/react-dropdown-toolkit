@@ -1,8 +1,8 @@
 import React from 'react';
-
 import { Meta, StoryFn } from '@storybook/react';
 import Dropdown from './Dropdown';
 import { DropdownProps } from './DropdownProps';
+import { Properties } from 'csstype';
 
 export default {
   title: 'Form',
@@ -14,6 +14,12 @@ export default {
       },
       options: ['left', 'top'],
       defaultValue: 'left',
+    },
+    labelClass: {
+      control: {
+        type: 'text',
+      },
+      defaultValue: '',
     },
   },
 } as Meta;
@@ -40,6 +46,7 @@ Default.args = {
   noLabel: false,
   labelWidth: '250px',
   labelPosition: 'left',
+  labelStyle: { fontSize: '14px', fontWeight: 500 } as Properties<string | number, string & {}>,
   zIndex: 1000,
   onSelectedChange: (selected) => console.log(selected),
   options,
