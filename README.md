@@ -1,5 +1,6 @@
 # React Dropdown Toolkit
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f2a37909c1b6490786610e23109c4be1)](https://app.codacy.com/gh/wisnuvb/react-dropdown-toolkit?utm_source=github.com&utm_medium=referral&utm_content=wisnuvb/react-dropdown-toolkit&utm_campaign=Badge_Grade)
 [![npm version](https://badge.fury.io/js/react-dropdown-toolkit.svg)](https://badge.fury.io/js/react-dropdown-toolkit)
 [![codecov](https://codecov.io/gh/wisnuvb/react-dropdown-toolkit/graph/badge.svg?token=FHNNKMD3G5)](https://codecov.io/gh/wisnuvb/react-dropdown-toolkit)
 [![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](https://opensource.org/license/isc-license-txt)
