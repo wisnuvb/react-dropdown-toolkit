@@ -1,7 +1,8 @@
 # React Dropdown Toolkit
 
-[![npm version](https://badge.fury.io/js/react-dropdown-toolkit.svg)](https://badge.fury.io/js/react-dropdown-toolkit)
+[![npm version](https://img.shields.io/npm/v/react-dropdown-toolkit.svg)](https://www.npmjs.com/package/react-dropdown-toolkit)
 [![codecov](https://codecov.io/gh/wisnuvb/react-dropdown-toolkit/graph/badge.svg?token=FHNNKMD3G5)](https://codecov.io/gh/wisnuvb/react-dropdown-toolkit)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2ae451dbe2a0489aa7c8f23a2b110e42)](https://app.codacy.com/gh/wisnuvb/react-dropdown-toolkit/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](https://opensource.org/license/isc-license-txt)
 
 A customizable and searchable dropdown component for ReactJS.
